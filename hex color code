@@ -1,0 +1,18 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import re
+import sys
+
+# Read all input lines
+input_data = sys.stdin.read()
+
+
+css_blocks = re.findall(r'\{([\s\S]+?)\}', input_data)
+
+
+hex_regex = r'#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{3})(?![0-9a-fA-F])'
+
+# 3. Iterate through each block and find matches
+for block in css_blocks:
+    matches = re.findall(hex_regex, block)
+    for color in matches:
+        print(color)
