@@ -1,0 +1,29 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from itertools import product
+
+# Read K (number of lists) and M (modulo value)
+K, M = map(int, input().split())
+
+# Initialize a list to store the lists of squared elements
+lists = []
+
+for _ in range(K):
+    # Read the row, ignore the first element (Ni), and square the rest
+    row = list(map(int, input().split()))[1:]
+    squared_row = [x**2 for x in row]
+    lists.append(squared_row)
+
+# Generate all possible combinations picking one from each list
+# itertools.product(*lists) creates the cartesian product
+max_sum_mod = 0
+
+for combination in product(*lists):
+    # Calculate S = (f(x1) + f(x2) + ... + f(xk)) % M
+    current_sum_mod = sum(combination) % M
+    
+    # Update max_sum_mod if current is larger
+    if current_sum_mod > max_sum_mod:
+        max_sum_mod = current_sum_mod
+
+# Output the maximum result obtained
+print(max_sum_mod)
