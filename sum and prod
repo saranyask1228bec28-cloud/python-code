@@ -1,0 +1,8 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import numpy
+n, m = map(int, input().split())
+data = [list(map(int, input().split())) for _ in range(n)]
+my_array = numpy.array(data)
+sum_result = numpy.sum(my_array, axis=0)
+final_result = numpy.prod(sum_result)
+print(final_result)
