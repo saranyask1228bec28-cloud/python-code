@@ -1,0 +1,27 @@
+import sys
+
+def solve():
+    # Read N and M
+    line1 = sys.stdin.readline().split()
+    if not line1:
+        return
+    n, m = map(int, line1)
+    
+    # Read the athlete data
+    arr = []
+    for _ in range(n):
+        arr.append(list(map(int, sys.stdin.readline().split())))
+        
+    # Read the index K to sort by
+    k = int(sys.stdin.readline().strip())
+    
+    # Perform a stable sort based on the K-th element
+    # Python's sort is stable by default (Timsort)
+    arr.sort(key=lambda x: x[k])
+    
+    # Print the resulting table
+    for row in arr:
+        print(*(row))
+
+if __name__ == "__main__":
+    solve()
