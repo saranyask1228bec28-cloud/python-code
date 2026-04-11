@@ -1,0 +1,12 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import numpy
+n, m = map(int, input().split())
+matrix_data = []
+for _ in range(n):
+    row = list(map(int, input().split()))
+    matrix_data.append(row)
+
+my_array = numpy.array(matrix_data)
+print(numpy.transpose(my_array))
+print(my_array.flatten())
+
