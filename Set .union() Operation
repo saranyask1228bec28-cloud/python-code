@@ -1,0 +1,15 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# Read input for English newspaper subscribers
+n = int(input())
+english_subscribers = set(map(int, input().split()))
+
+# Read input for French newspaper subscribers
+m = int(input())
+french_subscribers = set(map(int, input().split()))
+
+# Calculate the union of both sets
+# This combines all unique roll numbers from both groups
+total_at_least_one = english_subscribers.union(french_subscribers)
+
+# Output the total count
+print(len(total_at_least_one))
