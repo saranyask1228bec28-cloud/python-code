@@ -1,0 +1,19 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import OrderedDict
+
+# Read number of items
+N = int(input())
+item_dict = OrderedDict()
+
+for _ in range(N):
+    # Split from the right once to separate the last space-separated integer (price)
+    data = input().rsplit(' ', 1)
+    name = data[0]
+    price = int(data[1])
+    
+    # Update total price for the item
+    item_dict[name] = item_dict.get(name, 0) + price
+
+# Print item names and their net prices in order of first appearance
+for name, total_price in item_dict.items():
+    print(name, total_price)
