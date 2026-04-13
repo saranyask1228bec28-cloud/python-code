@@ -1,0 +1,8 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# Read the input from STDIN
+var = input()
+
+# Evaluate the expression
+# Because the sample input is 'print(2 + 3)', 
+# eval() will execute that print command directly.
+eval(var)
