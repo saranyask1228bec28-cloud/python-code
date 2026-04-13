@@ -1,0 +1,26 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from itertools import combinations
+
+# Read input
+n = int(input())
+letters = input().split()
+k = int(input())
+
+# Count occurrences of 'a'
+target = 'a'
+indices_with_a = [i for i, char in enumerate(letters) if char == target]
+num_a = len(indices_with_a)
+num_not_a = n - num_a
+
+# We use the math.comb function for efficiency (available in Python 3.8+)
+# Or calculate combinations using the formula: n! / (k!(n-k)!)
+import math
+
+total_combinations = math.comb(n, k)
+unfavorable_combinations = math.comb(num_not_a, k)
+
+# Probability of at least one 'a' = 1 - (Probability of no 'a')
+prob_no_a = unfavorable_combinations / total_combinations
+result = 1 - prob_no_a
+
+print(f"{result:.4f}")
