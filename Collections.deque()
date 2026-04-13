@@ -1,0 +1,26 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import deque
+
+def solve():
+    # Number of operations
+    n = int(input())
+    d = deque()
+
+    for _ in range(n):
+        # Split the input into method name and arguments (if any)
+        input_data = input().split()
+        method_name = input_data[0]
+        
+        # If there is a value (like in append 1), pass it to the method
+        if len(input_data) > 1:
+            val = input_data[1]
+            getattr(d, method_name)(val)
+        else:
+            # For methods like pop() or popleft()
+            getattr(d, method_name)()
+
+    # Print the deque elements separated by a space
+    print(*(d))
+
+if __name__ == "__main__":
+    solve()
