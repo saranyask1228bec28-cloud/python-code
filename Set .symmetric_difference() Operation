@@ -1,0 +1,17 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# Step 1: Read the number of English students (not strictly used, but required for input)
+n = int(input())
+# Step 2: Read the roll numbers and convert them into a set
+english_set = set(map(int, input().split()))
+
+# Step 3: Read the number of French students
+m = int(input())
+# Step 4: Read the roll numbers into another set
+french_set = set(map(int, input().split()))
+
+# Step 5: Find the symmetric difference
+# This finds elements in either set, but not both
+result = english_set.symmetric_difference(french_set)
+
+# Step 6: Print the total count of those students
+print(len(result))
