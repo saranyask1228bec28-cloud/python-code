@@ -1,0 +1,14 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# Read input from STDIN
+# Since each number is on a separate line, we call input() four times
+a = int(input())
+b = int(input())
+c = int(input())
+d = int(input())
+
+# Calculate a to the power of b, plus c to the power of d
+# In Python, ** is the exponentiation operator
+result = (a ** b) + (c ** d)
+
+# Print the result to STDOUT
+print(result)
