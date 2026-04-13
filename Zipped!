@@ -1,0 +1,17 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# Read N (students) and X (subjects)
+n, x = map(int, input().split())
+
+# Create a list to store the marks for each subject
+sheet = []
+
+for _ in range(x):
+    # Read the marks for one subject and convert to floats
+    subject_marks = list(map(float, input().split()))
+    sheet.append(subject_marks)
+
+# zip(*sheet) unpacks the subjects and groups them by student
+for student_scores in zip(*sheet):
+    # Calculate the average for the current student
+    average = sum(student_scores) / x
+    print(average)
