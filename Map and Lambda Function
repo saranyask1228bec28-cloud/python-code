@@ -1,0 +1,15 @@
+# The lambda function takes x and returns x cubed
+cube = lambda x: x**3 
+
+def fibonacci(n):
+    # Initialize the first two numbers and an empty list
+    fib_list = []
+    a, b = 0, 1
+    
+    for _ in range(n):
+        fib_list.append(a)
+        # Update a and b: a becomes current b, b becomes sum of both
+        a, b = b, a + b
+        
+    return fib_list
+
