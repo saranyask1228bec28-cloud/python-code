@@ -1,0 +1,13 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# Read the two integers from input
+a = int(input())
+b = int(input())
+
+# Line 1: Integer division
+print(a // b)
+
+# Line 2: Modulo operator
+print(a % b)
+
+# Line 3: The divmod tuple
+print(divmod(a, b))
