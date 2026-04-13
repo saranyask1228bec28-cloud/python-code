@@ -1,0 +1,10 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# Read the first line containing x and k
+x, k = map(int, input().split())
+
+# Read the second line containing the polynomial string
+polynomial = input()
+
+# Use eval() to calculate the result of the polynomial with the current value of x
+# and compare it to k
+print(eval(polynomial) == k)
