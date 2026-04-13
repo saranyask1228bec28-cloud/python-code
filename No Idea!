@@ -1,0 +1,21 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT# Read n and m (though they are not strictly needed for the calculation)
+n, m = map(int, input().split())
+
+# Read the initial array
+storage = list(map(int, input().split()))
+
+# Read sets A and B (Converting to sets is crucial for performance)
+set_a = set(map(int, input().split()))
+set_b = set(map(int, input().split()))
+
+# Initialize happiness
+happiness = 0
+
+# Calculate happiness
+for i in storage:
+    if i in set_a:
+        happiness += 1
+    elif i in set_b:
+        happiness -= 1
+
+print(happiness)
