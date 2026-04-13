@@ -1,0 +1,23 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# Step 1: Read the primary set A
+storage_set = set(map(int, input().split()))
+
+# Step 2: Read the number of other sets
+n = int(input())
+
+# Step 3: Initialize a boolean to track if all conditions are met
+is_strict_superset = True
+
+# Step 4: Loop through each of the n sets
+for _ in range(n):
+    other_set = set(map(int, input().split()))
+    
+    # In Python, the '>' operator checks for a strict superset.
+    # It returns True if storage_set contains all elements of other_set 
+    # AND storage_set is not equal to other_set.
+    if not (storage_set > other_set):
+        is_strict_superset = False
+        break
+
+# Step 5: Print the final result
+print(is_strict_superset)
