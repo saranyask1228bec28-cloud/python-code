@@ -1,0 +1,12 @@
+
+def get_attr_number(node):
+    # your code goes here
+    import sys
+import xml.etree.ElementTree as etree
+
+def get_attr_number(node):
+    # node.iter() iterates over the current node and all nested elements
+    # len(element.attrib) gives the count of attributes for that element
+    return sum(len(element.attrib) for element in node.iter())
+
+
