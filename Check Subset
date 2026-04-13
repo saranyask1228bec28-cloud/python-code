@@ -1,0 +1,18 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# Read the number of test cases
+t = int(input())
+
+for _ in range(t):
+    # Read the number of elements in set A (not strictly needed for logic)
+    n_a = int(input())
+    # Convert the space-separated input into a set of integers
+    set_a = set(map(int, input().split()))
+    
+    # Read the number of elements in set B
+    n_b = int(input())
+    # Convert the space-separated input into a set of integers
+    set_b = set(map(int, input().split()))
+    
+    # Use the .issubset() method to check if A is a subset of B
+    # This will return and print 'True' or 'False'
+    print(set_a.issubset(set_b))
