@@ -1,0 +1,13 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from itertools import combinations_with_replacement
+
+# Step 1: Read the input and split it into string S and integer k
+s, k = input().split()
+
+# Step 2: Generate combinations 
+# We sort 's' first to ensure the final output is in lexicographical order
+res = combinations_with_replacement(sorted(s), int(k))
+
+# Step 3: Iterate through the results, join the tuples, and print
+for item in res:
+    print("".join(item))
