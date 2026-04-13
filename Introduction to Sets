@@ -1,0 +1,6 @@
+def average(array):
+    # Convert list to a set to remove duplicates
+    distinct_elements = set(array)
+    # Calculate average: sum of unique elements / count of unique elements
+    return sum(distinct_elements) / len(distinct_elements)
+
