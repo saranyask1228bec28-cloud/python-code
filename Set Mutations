@@ -1,0 +1,24 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# Read the number of elements in set A (not strictly needed but part of input)
+_ = int(input())
+
+# Initialize set A
+storage = set(map(int, input().split()))
+
+# Read the number of other sets/operations
+n = int(input())
+
+for _ in range(n):
+    # Read operation name and length of the next set
+    # We only need the operation name (index 0)
+    operation = input().split()[0]
+    
+    # Read the elements of the new set
+    new_set = set(map(int, input().split()))
+    
+    # Use getattr to call the specific method on the storage set
+    # Example: getattr(storage, "update")(new_set)
+    getattr(storage, operation)(new_set)
+
+# Print the sum of the elements in the mutated set
+print(sum(storage))
