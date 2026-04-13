@@ -1,0 +1,32 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from html.parser import HTMLParser
+
+# Define a custom parser class by inheriting from HTMLParser
+class MyHTMLParser(HTMLParser):
+    def handle_starttag(self, tag, attrs):
+        """Triggered when an opening tag is found (e.g., <div ...>)"""
+        print(tag)
+        for attr in attrs:
+            # attr is a tuple: (attribute_name, value)
+            print(f"-> {attr[0]} > {attr[1]}")
+
+    def handle_startendtag(self, tag, attrs):
+        """Triggered when a self-closing tag is found (e.g., <img ... />)"""
+        print(tag)
+        for attr in attrs:
+            print(f"-> {attr[0]} > {attr[1]}")
+
+# --- Main Logic ---
+
+# Read the number of lines
+n = int(input())
+
+# Read all lines of HTML and join them into a single string
+# This ensures multi-line tags are parsed correctly
+html_content = ""
+for _ in range(n):
+    html_content += input().rstrip() + "\n"
+
+# Instantiate and run the parser
+parser = MyHTMLParser()
+parser.feed(html_content)
