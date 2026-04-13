@@ -1,0 +1,8 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import numpy
+
+# Step 1: Read input, split it, and convert to a NumPy array of integers
+arr = numpy.array(input().split(), int)
+
+# Step 2: Reshape the array into a 3x3 grid and print it
+print(numpy.reshape(arr, (3, 3)))
