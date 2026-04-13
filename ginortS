@@ -1,0 +1,19 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# Read input from STDIN
+s = input()
+
+# Custom sort function to define priorities
+def custom_key(c):
+    if c.islower():
+        return (0, c)      # Priority 0: Lowercase
+    elif c.isupper():
+        return (1, c)      # Priority 1: Uppercase
+    elif c.isdigit():
+        if int(c) % 2 != 0:
+            return (2, c)  # Priority 2: Odd digits
+        else:
+            return (3, c)  # Priority 3: Even digits
+
+# Sort the string using the key and join the results
+result = sorted(s, key=custom_key)
+print("".join(result))
