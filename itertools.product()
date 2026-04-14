@@ -1,0 +1,13 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from itertools import product
+
+# Read input, split by whitespace, and convert to integers
+A = list(map(int, input().split()))
+B = list(map(int, input().split()))
+
+# Compute the cartesian product
+result = list(product(A, B))
+
+# Print the tuples separated by a space
+# The * operator unpacks the list into individual arguments for the print function
+print(*result)
