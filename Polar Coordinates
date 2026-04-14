@@ -1,0 +1,11 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import cmath
+
+# Read the complex number input as a string and convert it
+z = complex(input().strip())
+
+# Calculate and print the modulus (r)
+print(abs(z))
+
+# Calculate and print the phase angle (phi)
+print(cmath.phase(z))
