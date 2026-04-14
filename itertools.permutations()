@@ -1,0 +1,19 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from itertools import permutations
+
+# Read input, split into the string and the integer k
+s, k = input().split()
+
+# Convert k to an integer
+k = int(k)
+
+# Sort the string lexicographically first
+# This ensures permutations are generated in sorted order
+sorted_s = sorted(s)
+
+# Generate all permutations of length k
+perms = list(permutations(sorted_s, k))
+
+# Join the tuples into strings and print each on a new line
+for p in perms:
+    print("".join(p))
